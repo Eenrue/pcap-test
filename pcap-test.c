@@ -69,8 +69,8 @@ int main(int argc, char* argv[]) {
 
 		uint8_t* data = (uint8_t*)packet;
 		unsigned int datalen = header->caplen - (sizeof(struct libnet_ethernet_hdr) + sizeof(struct libnet_ipv4_hdr) + sizeof(struct libnet_tcp_hdr));
-        unsigned int maxlen=datalen;
-        if(datalen > 20) maxlen = 20;
+        	unsigned int maxlen=datalen;
+        	if(datalen > 20) maxlen = 20;
 		uint16_t eth_type = ntohs(ethernet_hdr->ether_type);
 		uint8_t protocol = ipv4_hdr->ip_p;
 
